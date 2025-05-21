@@ -14,7 +14,11 @@ export const TechBadge = ({
   ...props
 }: TechBadgeProps) => {
   return (
-    <Badge title={tech} className={`${className} pl-1 pr-1`} {...props}>
+    <Badge
+      title={tech}
+      className={`${className} pl-1 pr-1 font-[inconsolata]`}
+      {...props}
+    >
       <img src={`${CDN}${tech}`} width="16px" />
       {!icon && tech}
     </Badge>

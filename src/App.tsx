@@ -30,10 +30,10 @@ function App() {
   return (
     <main className="py-6 max-w-6xl px-3 sm:px-6 md:py-12 lg:px-12 mx-auto grid grid-cols-4 gap-6">
       <img src="/Enzo.png" className="rounded-xl shadow-lg" />
-      <div className="p-2 col-span-3">
+      <div className="flex flex-col gap-2 col-span-3">
         <div className="flex gap-2">
-          <Badge className="font-[consolas] bg-sky-800">
-            Full stack engineer
+          <Badge className="font-[inconsolata] bg-sky-800">
+            Développeur full stack
           </Badge>{" "}
           <Badge className="bg-neutral-600">
             <p className="font-extrabold italic text-purple-300">XP</p>{" "}
@@ -41,29 +41,49 @@ function App() {
           </Badge>
           <Badge className="bg-neutral-600">Français</Badge>
         </div>
-        <h1 className="text-6xl font-bold">Enzo GUENY MICALLEF</h1>
-        <p className="text-lg mt-2">
+        <h1 className="text-6xl font-bold">Enzo GUENY</h1>
+        <p className="text-lg">
           Je suis développeur full stack qualifié en React. J'ai un profil
           technique et créatif, diplômé de M2 software engineering et j'ai un
           fort intérêt pour l'art, le dessin, le jeu vidéo et la musique.
         </p>
-        <div className="flex gap-1 mt-2 flex-wrap">
-          <TechBadge className="bg-neutral-900" tech="react" />
-          <TechBadge className="bg-neutral-900" tech="javascript" />
-          <TechBadge className="bg-neutral-900" tech="docker" />
-          <TechBadge className="bg-neutral-900" tech="node.js" />
-          <TechBadge className="bg-neutral-900" tech="rubyonrails" />
-          <TechBadge className="bg-neutral-900" tech="figma" />
-          <TechBadge className="bg-neutral-900" tech="JIRA" />
-          <TechBadge className="bg-neutral-900" tech="bitbucket" />
-          <TechBadge className="bg-neutral-900" tech="MUI" />
-          <TechBadge className="bg-neutral-900" tech="git" />
-          <TechBadge className="bg-neutral-900" tech="tailwindcss" />
-          <TechBadge className="bg-neutral-900" tech="awslambda" />
-          <TechBadge className="bg-neutral-900" tech="sass" />
-          <TechBadge className="bg-neutral-900" tech="unity" />
-          <TechBadge className="bg-neutral-900" tech="postgresql" />
-          <TechBadge className="bg-neutral-900" tech="prisma" />
+        <div className="grid grid-cols-3 gap-3 flex-grow">
+          <Card className="p-2 border-0 bg-neutral-700 flex gap-2">
+            <Badge className="bg-neutral-800">Frontend | UX</Badge>
+            <div className="flex flex-row flex-wrap items-start content-start gap-1.5">
+              <TechBadge className="bg-neutral-900" tech="react" />
+              <TechBadge className="bg-neutral-900" tech="figma" />
+              <TechBadge className="bg-neutral-900" tech="javascript" />
+              <TechBadge className="bg-neutral-900" tech="tailwindcss" />
+              <TechBadge className="bg-neutral-900" tech="sass" />
+              <TechBadge className="bg-neutral-900" tech="MUI" />
+              <TechBadge className="bg-neutral-900" tech="css" />
+            </div>
+          </Card>
+          <Card className="p-2 border-0 bg-neutral-700 flex gap-2">
+            <Badge className="bg-neutral-800">Backend | Infra</Badge>
+            <div className="flex flex-row flex-wrap items-start content-start gap-1.5">
+              <TechBadge className="bg-neutral-900" tech="node.js" />
+              <TechBadge className="bg-neutral-900" tech="prisma" />
+              <TechBadge className="bg-neutral-900" tech="express" />
+              <TechBadge className="bg-neutral-900" tech="postgresql" />
+              <TechBadge className="bg-neutral-900" tech="rubyonrails" />
+              <TechBadge className="bg-neutral-900" tech="docker" />
+              <TechBadge className="bg-neutral-900" tech="awslambda" />
+            </div>
+          </Card>
+          <Card className="p-2 border-0 bg-neutral-700 flex gap-2">
+            <Badge className="bg-neutral-800">Projets | Autres</Badge>
+            <div className="flex flex-row flex-wrap items-start content-start gap-1.5">
+              <TechBadge className="bg-neutral-900" tech="JIRA" />
+              <TechBadge className="bg-neutral-900" tech="git" />
+              <TechBadge className="bg-neutral-900" tech="bitbucket" />
+              <TechBadge className="bg-neutral-900" tech="postman" />
+              <TechBadge className="bg-neutral-900" tech="obsidian" />
+              <TechBadge className="bg-neutral-900" tech="unity" />
+              <TechBadge className="bg-neutral-900" tech="aseprite" />
+            </div>
+          </Card>
         </div>
       </div>
 
@@ -153,7 +173,7 @@ function App() {
               </p>
             </div>
             <Badge>Mai 2022 → Aujourd'hui</Badge>
-            <Badge className="font-[consolas] bg-green-600">
+            <Badge className="font-[inconsolata] font-bold text-green-100 bg-green-900">
               <Lightbulb size="16" /> Expérience principale
             </Badge>
           </div>
@@ -171,6 +191,12 @@ function App() {
             <TechBadge icon tech="sass" />
             <TechBadge icon tech="postgresql" />
           </span>
+          <p>
+            J'ai développé des fonctionnalités majeures de visualisation de
+            données client et rendu la plateforme très attractive pour les
+            clients. En comprenant le besoin et en développant des outils d'aide
+            à la décision j'ai apporté beaucoup de valeur aux données livrées.
+          </p>
           <ul className="list-disc list-inside ml-1">
             <li>
               Spécification technique et métier en accord avec le besoin client
@@ -191,8 +217,8 @@ function App() {
             </li>
           </ul>
           <span>
-            <span className="font-bold">Phenostation</span>: 2 projets embarqués{" "}
-            <TechBadge icon tech="node.js" />
+            <span className="font-bold">Produit physique</span>: 2 projets
+            embarqués <TechBadge icon tech="node.js" />
             <TechBadge icon tech="express" />
             <TechBadge icon tech="react" />
             <TechBadge icon tech="MUI" />
@@ -212,8 +238,8 @@ function App() {
           </ul>
 
           <span>
-            <span className="font-bold">Phenostation Monitoring</span>:
-            Application de visualisation de données
+            <span className="font-bold">Plateforme monitoring</span>:
+            Application de visualisation et validation de données{" "}
             <TechBadge icon tech="node.js" />
             <TechBadge icon tech="express" />
             <TechBadge icon tech="react" />
@@ -243,7 +269,7 @@ function App() {
               </p>
             </div>
             <Badge>Janvier 2021 → Aout 2021</Badge>
-            <Badge className="font-[consolas] bg-stone-700">
+            <Badge className="font-[inconsolata] bg-stone-700">
               Stage fin d'études
             </Badge>
           </div>
@@ -260,7 +286,7 @@ function App() {
           </p>
         </Card>
         <Card className="p-2 gap-2 border-0 bg-neutral-900 shadow-lg shadow-neutral-900">
-          <Badge className="font-[consolas] bg-neutral-800">
+          <Badge className="font-[inconsolata] bg-neutral-800">
             Autres expériences notables
           </Badge>
           <div className="flex items-baseline gap-2">
