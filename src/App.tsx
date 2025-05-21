@@ -4,27 +4,53 @@ import {
   AtSign,
   Backpack,
   ChefHat,
+  Download,
   Dumbbell,
   ExternalLink,
   Gamepad2,
+  Globe2,
   GraduationCap,
   Guitar,
   HomeIcon,
   Lightbulb,
+  Linkedin,
   MapPin,
   Mountain,
+  NotebookPen,
   Palette,
   Pen,
   Phone,
   Sparkles,
 } from "lucide-react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from "@/components/ui/hover-card";
 
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { TechBadge } from "./components/custom/TechBadge";
 import { getYearDiff } from "./utils";
 
 const HIPHEN_START_DATE = new Date("02-05-2022");
+
+const PORTFOLIO = [
+  { filename: "PinguSprites.png", label: "card sprites" },
+  { filename: "char1.png", label: "chara design" },
+  { filename: "shroom.jpg", label: "" },
+  { filename: "faces.jpg", label: "" },
+  { filename: "char2.jpg", label: "" },
+  { filename: "study.jpg", label: "" },
+];
 
 function App() {
   return (
@@ -40,6 +66,12 @@ function App() {
             {getYearDiff(HIPHEN_START_DATE, new Date())} ans
           </Badge>
           <Badge className="bg-neutral-600">Français</Badge>
+          <img src="/flags/fr.svg" width="20px" className="rounded-md" />
+          <img src="/flags/gb.svg" width="20px" className="rounded-md" />
+          <div className="flex-grow" />
+          <Button size="icon" className="p-0">
+            <Download />
+          </Button>
         </div>
         <h1 className="text-6xl font-bold">Enzo GUENY</h1>
         <p className="text-lg">
@@ -97,11 +129,14 @@ function App() {
               <AtSign size="16" /> enzogueny30@gmail.com
             </div>
           </a>
-          <div>
-            <div className="flex items-center gap-2">
-              <HomeIcon size="16" /> 84140 Avignon, France
-            </div>
+          <div className="flex items-center gap-2">
+            <HomeIcon size="16" /> 84140 Avignon, France
           </div>
+          <a href="https://www.linkedin.com/in/enzo-gueny-3b16b9186/">
+            <div className="flex items-center gap-2">
+              <Linkedin size="16" /> /enzo-gueny
+            </div>
+          </a>
         </Card>
         <Card className="relative p-2 border-0 bg-neutral-700 shadow-lg shadow-neutral-900 gap-1 overflow-hidden">
           <img
@@ -131,18 +166,41 @@ function App() {
           <Badge className="flex gap-1 items-center bg-neutral-800 ">
             <Sparkles /> Centres d'intérêt
           </Badge>
-          <div className="flex gap-1 items-center">
-            <Gamepad2 size="16" /> esport
-          </div>
-          <div className="flex gap-1 items-center">
-            <Backpack size="16" /> Voyage & exploration
-          </div>
+          <HoverCard openDelay={0}>
+            <HoverCardTrigger>
+              <div className="flex gap-1 items-center">
+                <Backpack size="16" /> Voyage & exploration
+              </div>
+            </HoverCardTrigger>
+            <HoverCardContent side="top">
+              <p>
+                Je voyage régulièrement, je suis très curieux de découvrir des
+                cultures différentes. Plutôt aventurier, je n'ai pas peur de
+                faire de longs trajets pour me rendre dans des lieux méconnus.
+              </p>
+            </HoverCardContent>
+          </HoverCard>
           <div className="flex gap-1 items-center">
             <Palette size="16" /> Art & musées
           </div>
           <div className="flex gap-1 items-center">
             <Pen size="16" /> Dessin
           </div>
+          <HoverCard openDelay={0}>
+            <HoverCardTrigger>
+              <div className="flex gap-1 items-center">
+                <Gamepad2 size="16" /> esport
+              </div>
+            </HoverCardTrigger>
+            <HoverCardContent side="top">
+              <p>
+                Je suis un grand consommateur de contenu esportif,
+                particulièrement Counter-Strike, je suis avec assiduité. Je me
+                rends aux évènements IRL le plus souvent possible.
+              </p>
+              <p>Supporter KC, Vitality sur CS</p>
+            </HoverCardContent>
+          </HoverCard>
           <div className="flex gap-1 items-center">
             <Dumbbell size="16" /> Musculation
           </div>
@@ -155,7 +213,46 @@ function App() {
           <div className="flex gap-1 items-center">
             <Mountain size="16" /> Randonnée
           </div>
+          <div className="flex gap-1 items-center">
+            <Globe2 size="16" /> Géographie
+          </div>
         </Card>
+        <Carousel>
+          <Badge className="absolute z-1 top-2 left-2 bg-neutral-700">
+            <NotebookPen /> Portfolio
+          </Badge>
+          <CarouselContent>
+            {PORTFOLIO.map(({ filename, label }, index) => {
+              const path = `/portfolio/${filename}`;
+              return (
+                <CarouselItem key={index}>
+                  <div
+                    className="relative bg-neutral-500 rounded-lg overflow-hidden bg-cover"
+                    style={{ backgroundImage: `url(${path})` }}
+                  >
+                    <img
+                      src={path}
+                      className="object-contain aspect-square backdrop-blur-lg"
+                    />
+                    {label && (
+                      <span className="font-[courier] absolute text-sm bottom-2 left-1/2 transform -translate-x-1/2 text-neutral-800 rounded-sm bg-neutral-100/50 pl-1 pr-1">
+                        {label}
+                      </span>
+                    )}
+                  </div>
+                </CarouselItem>
+              );
+            })}
+          </CarouselContent>
+          <CarouselPrevious
+            variant="ghost"
+            className="left-[10px] bg-neutral-600"
+          />
+          <CarouselNext
+            variant="ghost"
+            className="right-[10px] bg-neutral-600"
+          />
+        </Carousel>
       </div>
       <div className="col-span-3 flex flex-col gap-6">
         <Card className="p-2 gap-2 border-green-600 bg-neutral-900 shadow-lg shadow-green-900 border-2">
