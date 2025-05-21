@@ -16,16 +16,24 @@ import {
   Linkedin,
   MapPin,
   Mountain,
+  NotebookPen,
   Palette,
   Pen,
   Phone,
   Sparkles,
 } from "lucide-react";
 import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import {
   HoverCard,
   HoverCardContent,
   HoverCardTrigger,
-} from "./components/ui/hover-card";
+} from "@/components/ui/hover-card";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -34,6 +42,15 @@ import { TechBadge } from "./components/custom/TechBadge";
 import { getYearDiff } from "./utils";
 
 const HIPHEN_START_DATE = new Date("02-05-2022");
+
+const PORTFOLIO = [
+  { filename: "PinguSprites.png", label: "card sprites" },
+  { filename: "char1.png", label: "chara design" },
+  { filename: "shroom.jpg", label: "" },
+  { filename: "faces.jpg", label: "" },
+  { filename: "char2.jpg", label: "" },
+  { filename: "study.jpg", label: "" },
+];
 
 function App() {
   return (
@@ -180,6 +197,42 @@ function App() {
             <Globe2 size="16" /> Géographie
           </div>
         </Card>
+        <Carousel>
+          <Badge className="absolute z-1 top-2 left-2 bg-neutral-700">
+            <NotebookPen /> Portfolio
+          </Badge>
+          <CarouselContent>
+            {PORTFOLIO.map(({ filename, label }, index) => {
+              const path = `/portfolio/${filename}`;
+              return (
+                <CarouselItem key={index}>
+                  <div
+                    className="relative bg-neutral-500 rounded-lg overflow-hidden bg-cover"
+                    style={{ backgroundImage: `url(${path})` }}
+                  >
+                    <img
+                      src={path}
+                      className="object-contain aspect-square backdrop-blur-lg"
+                    />
+                    {label && (
+                      <span className="font-[courier] absolute text-sm bottom-2 left-1/2 transform -translate-x-1/2 text-neutral-800 rounded-sm bg-neutral-100/50 pl-1 pr-1">
+                        {label}
+                      </span>
+                    )}
+                  </div>
+                </CarouselItem>
+              );
+            })}
+          </CarouselContent>
+          <CarouselPrevious
+            variant="ghost"
+            className="left-[10px] bg-neutral-600"
+          />
+          <CarouselNext
+            variant="ghost"
+            className="right-[10px] bg-neutral-600"
+          />
+        </Carousel>
       </div>
       <div className="col-span-3 flex flex-col gap-6">
         <Card className="p-2 gap-2 border-green-600 bg-neutral-900 shadow-lg shadow-green-900 border-2">
