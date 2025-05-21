@@ -6,7 +6,6 @@ import {
   ChefHat,
   Download,
   Dumbbell,
-  ExternalLink,
   Gamepad2,
   Github,
   Globe2,
@@ -208,13 +207,10 @@ function App() {
         <Card className="p-2 gap-2 border-green-600 bg-neutral-900 shadow-lg shadow-green-900 border-2">
           <div className="flex justify-between items-start">
             <div>
-              <a href="#">
-                <div className="flex items-center gap-2">
-                  <img src="/icon/hiphen.webp" width="16px" />
-                  <h3 className="text-xl font-bold ">Hiphen</h3>
-                  <ExternalLink className="text-neutral-600" size="16" />
-                </div>
-              </a>
+              <div className="flex items-center gap-2">
+                <img src="/icon/hiphen.webp" width="16px" />
+                <h3 className="text-xl font-bold ">Hiphen</h3>
+              </div>
               <p className="flex items-center gap-2 text-neutral-500">
                 <MapPin size="16" /> Avignon, France
               </p>
@@ -290,13 +286,10 @@ function App() {
         <Card className="p-2 gap-2 border-0 bg-neutral-900 shadow-lg shadow-neutral-900">
           <div className="flex justify-between items-start">
             <div>
-              <a href="#">
-                <div className="flex items-center gap-2">
-                  <img src="/icon/colas.png" width="16px" />
-                  <h3 className="text-xl font-bold ">Colas</h3>
-                  <ExternalLink className="text-neutral-600" size="16" />
-                </div>
-              </a>
+              <div className="flex items-center gap-2">
+                <img src="/icon/colas.png" width="16px" />
+                <h3 className="text-xl font-bold ">Colas</h3>
+              </div>
               <p className="flex items-center gap-2 text-neutral-500">
                 <MapPin size="16" /> Aix-en-Provence, France
               </p>
