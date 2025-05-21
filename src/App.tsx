@@ -38,7 +38,10 @@ const HIPHEN_START_DATE = new Date("02-05-2022");
 function App() {
   return (
     <main className="py-6 max-w-6xl px-3 sm:px-6 md:py-12 lg:px-12 mx-auto grid grid-cols-4 gap-6">
-      <img src="/Enzo.png" className="rounded-xl shadow-lg" />
+      <img
+        src={`${import.meta.env.BASE_URL}/Enzo.png`}
+        className="rounded-xl shadow-lg"
+      />
       <div className="flex flex-col gap-2 col-span-3">
         <div className="flex gap-2 items-center">
           <Badge className="font-[inconsolata] bg-sky-800">
@@ -49,10 +52,18 @@ function App() {
             {getYearDiff(HIPHEN_START_DATE, new Date())} ans
           </Badge>
           <Badge className="bg-neutral-600">Français</Badge>
-          <img src="/flags/fr.svg" width="20px" className="rounded-md" />
-          <img src="/flags/gb.svg" width="20px" className="rounded-md" />
+          <img
+            src={`${import.meta.env.BASE_URL}/flags/fr.svg`}
+            width="20px"
+            className="rounded-md"
+          />
+          <img
+            src={`${import.meta.env.BASE_URL}/flags/gb.svg`}
+            width="20px"
+            className="rounded-md"
+          />
           <div className="flex-grow" />
-          <a href="/EnzoGUENY.pdf" download>
+          <a href={`${import.meta.env.BASE_URL}/EnzoGUENY.pdf`} download>
             <Download size="16" />
           </a>
         </div>
@@ -124,7 +135,7 @@ function App() {
         </Card>
         <Card className="relative p-2 border-0 bg-neutral-700 shadow-lg shadow-neutral-900 gap-1 overflow-hidden">
           <img
-            src="/icon/au.png"
+            src={`${import.meta.env.BASE_URL}/icon/au.png`}
             alt="Icon"
             className="absolute left-[-15px] top-[30px] h-[100%] opacity-20 z-0"
           />
@@ -141,7 +152,7 @@ function App() {
             société du numérique
           </span>
           <div className="text-neutral-400 flex gap-1 items-center z-1">
-            <img src="/icon/au.png" width="16px" />
+            <img src={`${import.meta.env.BASE_URL}/icon/au.png`} width="16px" />
             Avignon université CERI
           </div>
           <Badge className="self-center z-1">2016 → 2021</Badge>
@@ -208,7 +219,10 @@ function App() {
           <div className="flex justify-between items-start">
             <div>
               <div className="flex items-center gap-2">
-                <img src="/icon/hiphen.webp" width="16px" />
+                <img
+                  src={`${import.meta.env.BASE_URL}/icon/hiphen.webp`}
+                  width="16px"
+                />
                 <h3 className="text-xl font-bold ">Hiphen</h3>
               </div>
               <p className="flex items-center gap-2 text-neutral-500">
@@ -287,7 +301,10 @@ function App() {
           <div className="flex justify-between items-start">
             <div>
               <div className="flex items-center gap-2">
-                <img src="/icon/colas.png" width="16px" />
+                <img
+                  src={`${import.meta.env.BASE_URL}/icon/colas.png`}
+                  width="16px"
+                />
                 <h3 className="text-xl font-bold ">Colas</h3>
               </div>
               <p className="flex items-center gap-2 text-neutral-500">

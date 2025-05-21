@@ -42,7 +42,7 @@ export const Portfolio = () => {
         </Badge>
         <CarouselContent>
           {PORTFOLIO.map(({ filename, label }, index) => {
-            const path = `/portfolio/${filename}`;
+            const path = `${import.meta.env.BASE_URL}/portfolio/${filename}`;
             return (
               <CarouselItem key={index}>
                 <div
