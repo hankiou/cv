@@ -8,6 +8,7 @@ import {
   Dumbbell,
   ExternalLink,
   Gamepad2,
+  Github,
   Globe2,
   GraduationCap,
   Guitar,
@@ -16,19 +17,11 @@ import {
   Linkedin,
   MapPin,
   Mountain,
-  NotebookPen,
   Palette,
   Pen,
   Phone,
   Sparkles,
 } from "lucide-react";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
 import {
   HoverCard,
   HoverCardContent,
@@ -36,28 +29,19 @@ import {
 } from "@/components/ui/hover-card";
 
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { Portfolio } from "./components/custom/Portfolio";
 import { TechBadge } from "./components/custom/TechBadge";
 import { getYearDiff } from "./utils";
 
 const HIPHEN_START_DATE = new Date("02-05-2022");
-
-const PORTFOLIO = [
-  { filename: "PinguSprites.png", label: "card sprites" },
-  { filename: "char1.png", label: "chara design" },
-  { filename: "shroom.jpg", label: "" },
-  { filename: "faces.jpg", label: "" },
-  { filename: "char2.jpg", label: "" },
-  { filename: "study.jpg", label: "" },
-];
 
 function App() {
   return (
     <main className="py-6 max-w-6xl px-3 sm:px-6 md:py-12 lg:px-12 mx-auto grid grid-cols-4 gap-6">
       <img src="/Enzo.png" className="rounded-xl shadow-lg" />
       <div className="flex flex-col gap-2 col-span-3">
-        <div className="flex gap-2">
+        <div className="flex gap-2 items-center">
           <Badge className="font-[inconsolata] bg-sky-800">
             Développeur full stack
           </Badge>{" "}
@@ -69,9 +53,9 @@ function App() {
           <img src="/flags/fr.svg" width="20px" className="rounded-md" />
           <img src="/flags/gb.svg" width="20px" className="rounded-md" />
           <div className="flex-grow" />
-          <Button size="icon" className="p-0">
-            <Download />
-          </Button>
+          <a href="/EnzoGUENY.pdf" download>
+            <Download size="16" />
+          </a>
         </div>
         <h1 className="text-6xl font-bold">Enzo GUENY</h1>
         <p className="text-lg">
@@ -88,7 +72,6 @@ function App() {
               <TechBadge className="bg-neutral-900" tech="javascript" />
               <TechBadge className="bg-neutral-900" tech="tailwindcss" />
               <TechBadge className="bg-neutral-900" tech="sass" />
-              <TechBadge className="bg-neutral-900" tech="MUI" />
               <TechBadge className="bg-neutral-900" tech="css" />
             </div>
           </Card>
@@ -110,10 +93,7 @@ function App() {
               <TechBadge className="bg-neutral-900" tech="JIRA" />
               <TechBadge className="bg-neutral-900" tech="git" />
               <TechBadge className="bg-neutral-900" tech="bitbucket" />
-              <TechBadge className="bg-neutral-900" tech="postman" />
-              <TechBadge className="bg-neutral-900" tech="obsidian" />
               <TechBadge className="bg-neutral-900" tech="unity" />
-              <TechBadge className="bg-neutral-900" tech="aseprite" />
             </div>
           </Card>
         </div>
@@ -135,6 +115,11 @@ function App() {
           <a href="https://www.linkedin.com/in/enzo-gueny-3b16b9186/">
             <div className="flex items-center gap-2">
               <Linkedin size="16" /> /enzo-gueny
+            </div>
+          </a>
+          <a href="https://github.com/hankiou">
+            <div className="flex items-center gap-2">
+              <Github size="16" /> /hankiou
             </div>
           </a>
         </Card>
@@ -162,7 +147,7 @@ function App() {
           </div>
           <Badge className="self-center z-1">2016 → 2021</Badge>
         </Card>
-        <Card className="p-2 gap-1 border-0 bg-neutral-900">
+        <Card className="p-2 justify-between gap-1 content-between border-0 bg-neutral-900 flex-grow">
           <Badge className="flex gap-1 items-center bg-neutral-800 ">
             <Sparkles /> Centres d'intérêt
           </Badge>
@@ -172,7 +157,7 @@ function App() {
                 <Backpack size="16" /> Voyage & exploration
               </div>
             </HoverCardTrigger>
-            <HoverCardContent side="top">
+            <HoverCardContent side="right">
               <p>
                 Je voyage régulièrement, je suis très curieux de découvrir des
                 cultures différentes. Plutôt aventurier, je n'ai pas peur de
@@ -192,7 +177,7 @@ function App() {
                 <Gamepad2 size="16" /> esport
               </div>
             </HoverCardTrigger>
-            <HoverCardContent side="top">
+            <HoverCardContent side="right">
               <p>
                 Je suis un grand consommateur de contenu esportif,
                 particulièrement Counter-Strike, je suis avec assiduité. Je me
@@ -217,42 +202,7 @@ function App() {
             <Globe2 size="16" /> Géographie
           </div>
         </Card>
-        <Carousel>
-          <Badge className="absolute z-1 top-2 left-2 bg-neutral-700">
-            <NotebookPen /> Portfolio
-          </Badge>
-          <CarouselContent>
-            {PORTFOLIO.map(({ filename, label }, index) => {
-              const path = `/portfolio/${filename}`;
-              return (
-                <CarouselItem key={index}>
-                  <div
-                    className="relative bg-neutral-500 rounded-lg overflow-hidden bg-cover"
-                    style={{ backgroundImage: `url(${path})` }}
-                  >
-                    <img
-                      src={path}
-                      className="object-contain aspect-square backdrop-blur-lg"
-                    />
-                    {label && (
-                      <span className="font-[courier] absolute text-sm bottom-2 left-1/2 transform -translate-x-1/2 text-neutral-800 rounded-sm bg-neutral-100/50 pl-1 pr-1">
-                        {label}
-                      </span>
-                    )}
-                  </div>
-                </CarouselItem>
-              );
-            })}
-          </CarouselContent>
-          <CarouselPrevious
-            variant="ghost"
-            className="left-[10px] bg-neutral-600"
-          />
-          <CarouselNext
-            variant="ghost"
-            className="right-[10px] bg-neutral-600"
-          />
-        </Carousel>
+        <Portfolio />
       </div>
       <div className="col-span-3 flex flex-col gap-6">
         <Card className="p-2 gap-2 border-green-600 bg-neutral-900 shadow-lg shadow-green-900 border-2">
@@ -283,10 +233,6 @@ function App() {
           <span>
             <span className="font-bold">Cloverfield</span>: Responsable de notre
             principale application client
-            <TechBadge icon tech="rubyonrails" />
-            <TechBadge icon tech="react" />
-            <TechBadge icon tech="sass" />
-            <TechBadge icon tech="postgresql" />
           </span>
           <p>
             J'ai développé des fonctionnalités majeures de visualisation de
@@ -315,11 +261,7 @@ function App() {
           </ul>
           <span>
             <span className="font-bold">Produit physique</span>: 2 projets
-            embarqués <TechBadge icon tech="node.js" />
-            <TechBadge icon tech="express" />
-            <TechBadge icon tech="react" />
-            <TechBadge icon tech="MUI" />
-            <TechBadge icon tech="postgresql" />
+            embarqués
           </span>
           <ul className="list-disc list-inside ml-1">
             <li>
@@ -336,13 +278,7 @@ function App() {
 
           <span>
             <span className="font-bold">Plateforme monitoring</span>:
-            Application de visualisation et validation de données{" "}
-            <TechBadge icon tech="node.js" />
-            <TechBadge icon tech="express" />
-            <TechBadge icon tech="react" />
-            <TechBadge icon tech="MUI" />
-            <TechBadge icon tech="keycloak" />
-            <TechBadge icon tech="postgresql" />
+            Application de visualisation et validation de données
           </span>
           <ul className="list-disc list-inside ml-1">
             <li>
