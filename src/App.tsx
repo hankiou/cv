@@ -4,6 +4,7 @@ import {
   AtSign,
   Backpack,
   ChefHat,
+  Crosshair,
   Download,
   Dumbbell,
   Gamepad2,
@@ -12,7 +13,6 @@ import {
   GraduationCap,
   Guitar,
   HomeIcon,
-  Lightbulb,
   Linkedin,
   MapPin,
   Mountain,
@@ -39,10 +39,10 @@ function App() {
   return (
     <main className="py-6 max-w-6xl px-3 sm:px-6 md:py-12 lg:px-12 mx-auto grid grid-cols-4 gap-6">
       <img
-        src={`${import.meta.env.BASE_URL}/Enzo.png`}
+        src={`${import.meta.env.BASE_URL}/Enzo.jpeg`}
         className="rounded-xl shadow-lg"
       />
-      <div className="flex flex-col gap-2 col-span-3">
+      <div className="flex flex-col gap-2 xs:col-span-4 md:col-span-3">
         <div className="flex gap-2 items-center">
           <Badge className="font-[inconsolata] bg-sky-800">
             Développeur full stack
@@ -51,7 +51,6 @@ function App() {
             <p className="font-extrabold italic text-purple-300">XP</p>{" "}
             {getYearDiff(HIPHEN_START_DATE, new Date())} ans
           </Badge>
-          <Badge className="bg-neutral-600">Français</Badge>
           <img
             src={`${import.meta.env.BASE_URL}/flags/fr.svg`}
             width="20px"
@@ -67,11 +66,13 @@ function App() {
             <Download size="16" />
           </a>
         </div>
-        <h1 className="text-6xl font-bold">Enzo GUENY</h1>
+        <h1 className="text-5xl font-bold">Enzo GUENY MICALLEF</h1>
         <p className="text-lg">
-          Je suis développeur full stack qualifié en React. J'ai un profil
-          technique et créatif, diplômé de M2 software engineering et j'ai un
-          fort intérêt pour l'art, le dessin, le jeu vidéo et la musique.
+          Je suis développeur full stack qualifié en React avec un profil
+          technique et créatif. J'ai les compétences pour développer une
+          application entière avec une attention particulière à l'UX. Diplômé de
+          Master software engineering. J'ai un fort intérêt pour l'art, le
+          dessin et le jeu vidéo.
         </p>
         <div className="grid grid-cols-3 gap-3 flex-grow">
           <Card className="p-2 border-0 bg-neutral-700 flex gap-2">
@@ -215,7 +216,7 @@ function App() {
         <Portfolio />
       </div>
       <div className="col-span-3 flex flex-col gap-6">
-        <Card className="p-2 gap-2 border-green-600 bg-neutral-900 shadow-lg shadow-green-900 border-2">
+        <Card className="p-2 gap-2 bg-neutral-900 shadow-lg shadow-neutral-900 border-0">
           <div className="flex justify-between items-start">
             <div>
               <div className="flex items-center gap-2">
@@ -230,45 +231,58 @@ function App() {
               </p>
             </div>
             <Badge>Mai 2022 → Aujourd'hui</Badge>
-            <Badge className="font-[inconsolata] font-bold text-green-100 bg-green-900">
-              <Lightbulb size="16" /> Expérience principale
-            </Badge>
           </div>
           <p>
             J'ai travaillé en tant que membre d'une équipe IT de 6 personnes
             dans une entreprise d'environ 30 employés. Cette échelle implique
-            une autonomie de travail et une proactivité dont j'ai fait part et
-            qui a souvent été saluée.
+            une autonomie et une proactivité, souvent reconnues par mes pairs et
+            ma hiérarchie.
           </p>
-          <span>
-            <span className="font-bold">Cloverfield</span>: Responsable de notre
-            principale application client
-          </span>
-          <p>
-            J'ai développé des fonctionnalités majeures de visualisation de
-            données client et rendu la plateforme très attractive pour les
-            clients. En comprenant le besoin et en développant des outils d'aide
-            à la décision j'ai apporté beaucoup de valeur aux données livrées.
-          </p>
-          <ul className="list-disc list-inside ml-1">
-            <li>
-              Spécification technique et métier en accord avec le besoin client
-            </li>
-            <li>
-              Réalisation de maquettes détaillées et versionnées
+          <Card className="p-2 gap-1 border-green-600 shadow-md shadow-green-900 ">
+            <div className="flex justify-between items-center">
+              <span className="text-lg">
+                <span className="font-bold">Cloverfield</span>: Principale
+                application destinée aux clients{" "}
+                <TechBadge icon tech="rubyonrails" />
+                <TechBadge icon tech="react" />
+                <TechBadge icon tech="sass" />
+              </span>{" "}
+              <Badge className="font-[inconsolata] font-bold text-green-100 bg-green-900">
+                <Crosshair size="16" /> Coeur de mes activités
+              </Badge>
+            </div>
+
+            <p>
+              Responsable du développement de la plateforme tout au long de mon
+              expérience, j'ai conçu et intégré de puissantes fonctionnalités d'
+              <span className="text-green-600">
+                exploration de données
+              </span>{" "}
+              agronomiques, renforçant significativement son attractivité et son
+              ergonomie.
+            </p>
+            <p>
+              En comprenant les enjeux métier et en développant des outils
+              d'aide à la décision, j'ai renforcé la valeur exploitable des
+              données livrées.
+            </p>
+            <p>
+              Pour la plupart des fonctionnalités, je réalisais des itérations
+              de <span className="text-green-600">maquettes détaillées</span>{" "}
+              pour discuter des choix avec ma direction.
               <TechBadge icon tech="figma" />
-            </li>
-            <li>
-              Gestion de projet, chiffrage temps, planification des releases,
-              revue de code <TechBadge icon tech="JIRA" />
+            </p>
+            <p>
+              En tant que responsable du projet, j'estimais les charges,
+              planifiais les livraisons et assurais la{" "}
+              <span className="text-green-600">relecture du code</span> produit
+              par l'équipe. J'ai également{" "}
+              <span className="text-green-600">encadré deux stagiaires</span>{" "}
+              successifs sur une période totale de 12 mois.{" "}
+              <TechBadge icon tech="JIRA" />
               <TechBadge icon tech="Bitbucket" />
-            </li>
-            <li>Encadrement de stagiaires pour le développement de tickets</li>
-            <li>
-              Mise à niveau des technologies, maintien, couverture de tests,
-              documentation de routes
-            </li>
-          </ul>
+            </p>
+          </Card>
           <span>
             <span className="font-bold">Produit physique</span>: 2 projets
             embarqués
@@ -276,13 +290,10 @@ function App() {
           <ul className="list-disc list-inside ml-1">
             <li>
               Développement de service de traçabilité interfacé avec d'autres
-              systèmes
+              systèmes et REST API.
             </li>
             <li>
               GUI tactile en mode Kiosk facile à utiliser en contexte industriel
-            </li>
-            <li>
-              Gestion de projet, chiffrage temps, planification des releases
             </li>
           </ul>
 
@@ -311,10 +322,10 @@ function App() {
                 <MapPin size="16" /> Aix-en-Provence, France
               </p>
             </div>
-            <Badge>Janvier 2021 → Aout 2021</Badge>
             <Badge className="font-[inconsolata] bg-stone-700">
               Stage fin d'études
             </Badge>
+            <Badge>Janvier 2021 → Aout 2021</Badge>
           </div>
           <p>
             J'ai été chargé de former une grande partie du personnel, chefs de

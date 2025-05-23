@@ -12,10 +12,11 @@ import { NotebookPen } from "lucide-react";
 import { useState } from "react";
 
 const PORTFOLIO = [
-  { filename: "girl2.jfif", label: "" },
-  { filename: "PinguSprites.png", label: "card sprites" },
-  { filename: "girl1.jfif", label: "" },
   { filename: "char1.png", label: "chara design" },
+  { filename: "PinguSprites.png", label: "card sprites" },
+  { filename: "face.png", label: "" },
+  { filename: "girl2.jfif", label: "" },
+  { filename: "girl1.jfif", label: "" },
   { filename: "shroom.jpg", label: "" },
   { filename: "faces.jpg", label: "" },
   { filename: "char2.jpg", label: "" },
