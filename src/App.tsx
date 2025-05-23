@@ -5,7 +5,6 @@ import {
   Backpack,
   ChefHat,
   Crosshair,
-  Download,
   Dumbbell,
   Gamepad2,
   Github,
@@ -13,6 +12,7 @@ import {
   GraduationCap,
   Guitar,
   HomeIcon,
+  Lightbulb,
   Linkedin,
   MapPin,
   Mountain,
@@ -31,25 +31,22 @@ import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { Portfolio } from "./components/custom/Portfolio";
 import { TechBadge } from "./components/custom/TechBadge";
-import { getYearDiff } from "./utils";
-
-const HIPHEN_START_DATE = new Date("02-05-2022");
 
 function App() {
   return (
-    <main className="py-6 max-w-6xl px-3 sm:px-6 md:py-12 lg:px-12 mx-auto grid grid-cols-4 gap-6">
+    <main className="py-4 px-4 sm:py-6 sm:px-3 md:py-12 md:px-6 lg:px-12 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-6">
       <img
         src={`${import.meta.env.BASE_URL}/Enzo.jpeg`}
-        className="rounded-xl shadow-lg"
+        className="rounded-xl shadow-lg w-full max-w-50 mx-auto md:mx-0 md:max-w-full md:col-span-1"
       />
-      <div className="flex flex-col gap-2 xs:col-span-4 md:col-span-3">
-        <div className="flex gap-2 items-center">
+      <div className="flex flex-col gap-4 md:gap-2 md:col-span-3">
+        <div className="flex flex-wrap gap-2 items-center justify-center md:justify-start">
           <Badge className="font-[inconsolata] bg-sky-800">
             Développeur full stack
-          </Badge>{" "}
-          <Badge className="bg-neutral-600">
-            <p className="font-extrabold italic text-purple-300">XP</p>{" "}
-            {getYearDiff(HIPHEN_START_DATE, new Date())} ans
+          </Badge>
+          <Badge className="bg-neutral-600 flex items-center gap-1">
+            <p className="font-extrabold italic text-purple-300">XP</p>
+            3+ ans
           </Badge>
           <img
             src={`${import.meta.env.BASE_URL}/flags/fr.svg`}
@@ -61,21 +58,19 @@ function App() {
             width="20px"
             className="rounded-md"
           />
-          <div className="flex-grow" />
-          <a href={`${import.meta.env.BASE_URL}/EnzoGUENY.pdf`} download>
-            <Download size="16" />
-          </a>
         </div>
-        <h1 className="text-5xl font-bold">Enzo GUENY MICALLEF</h1>
-        <p className="text-lg">
+        <h1 className="text-3xl text-center md:text-left sm:text-4xl md:text-5xl font-bold break-words">
+          Enzo GUENY MICALLEF
+        </h1>
+        <p className="text-base sm:text-lg text-center md:text-left text-neutral-300">
           Je suis développeur full stack qualifié en React avec un profil
           technique et créatif. J'ai les compétences pour développer une
           application entière avec une attention particulière à l'UX. Diplômé de
           Master software engineering. J'ai un fort intérêt pour l'art, le
           dessin et le jeu vidéo.
         </p>
-        <div className="grid grid-cols-3 gap-3 flex-grow">
-          <Card className="p-2 border-0 bg-neutral-700 flex gap-2">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 flex-grow">
+          <Card className="p-2 border-0 bg-neutral-700 flex gap-2 flex-col">
             <Badge className="bg-neutral-800">Frontend | UX</Badge>
             <div className="flex flex-row flex-wrap items-start content-start gap-1.5">
               <TechBadge className="bg-neutral-900" tech="react" />
@@ -86,7 +81,7 @@ function App() {
               <TechBadge className="bg-neutral-900" tech="css" />
             </div>
           </Card>
-          <Card className="p-2 border-0 bg-neutral-700 flex gap-2">
+          <Card className="p-2 border-0 bg-neutral-700 flex gap-2 flex-col">
             <Badge className="bg-neutral-800">Backend | Infra</Badge>
             <div className="flex flex-row flex-wrap items-start content-start gap-1.5">
               <TechBadge className="bg-neutral-900" tech="node.js" />
@@ -98,7 +93,7 @@ function App() {
               <TechBadge className="bg-neutral-900" tech="awslambda" />
             </div>
           </Card>
-          <Card className="p-2 border-0 bg-neutral-700 flex gap-2">
+          <Card className="p-2 border-0 bg-neutral-700 flex gap-2 flex-col">
             <Badge className="bg-neutral-800">Projets | Autres</Badge>
             <div className="flex flex-row flex-wrap items-start content-start gap-1.5">
               <TechBadge className="bg-neutral-900" tech="JIRA" />
@@ -110,7 +105,7 @@ function App() {
         </div>
       </div>
 
-      <div className="flex flex-col gap-6">
+      <div className="flex flex-col gap-4 md:gap-6 mt-4 md:mt-0">
         <Card className="p-2 border-0 bg-neutral-900 shadow-lg gap-1">
           <div className="flex items-center gap-2">
             <Phone size="16" /> 07.70.50.85.85
@@ -140,11 +135,11 @@ function App() {
             alt="Icon"
             className="absolute left-[-15px] top-[30px] h-[100%] opacity-20 z-0"
           />
-          <div className="flex justify-between z-1">
+          <div className="flex justify-between z-1 flex-wrap gap-2">
             <Badge className="flex gap-1 items-center bg-neutral-800">
               <GraduationCap /> Formation
             </Badge>
-            <Badge className="flex gap-1 items-center font-extrabold text-red-200 bg-red-900  ">
+            <Badge className="flex gap-1 items-center font-extrabold text-red-200 bg-red-900">
               BAC +5
             </Badge>
           </div>
@@ -215,9 +210,12 @@ function App() {
         </Card>
         <Portfolio />
       </div>
-      <div className="col-span-3 flex flex-col gap-6">
+      <div className="md:col-span-3 flex flex-col gap-4 md:gap-6 mt-4 md:mt-0">
+        <h2 className="md:hidden text-xl font-bold">
+          Expérience professionnelle
+        </h2>
         <Card className="p-2 gap-2 bg-neutral-900 shadow-lg shadow-neutral-900 border-0">
-          <div className="flex justify-between items-start">
+          <div className="flex flex-col sm:flex-row justify-between items-start gap-2">
             <div>
               <div className="flex items-center gap-2">
                 <img
@@ -229,8 +227,13 @@ function App() {
               <p className="flex items-center gap-2 text-neutral-500">
                 <MapPin size="16" /> Avignon, France
               </p>
+            </div>{" "}
+            <div className="flex flex-col sm:flex-row gap-2">
+              <Badge className="font-[inconsolata] bg-stone-700">
+                <Lightbulb size="16" /> Expérience principale
+              </Badge>
+              <Badge>Mai 2022 → Aujourd'hui</Badge>
             </div>
-            <Badge>Mai 2022 → Aujourd'hui</Badge>
           </div>
           <p>
             J'ai travaillé en tant que membre d'une équipe IT de 6 personnes
@@ -239,14 +242,14 @@ function App() {
             ma hiérarchie.
           </p>
           <Card className="p-2 gap-1 border-green-600 shadow-md shadow-green-900 ">
-            <div className="flex justify-between items-center">
+            <div className="flex flex-col sm:flex-row justify-between items-center gap-2">
               <span className="text-lg">
                 <span className="font-bold">Cloverfield</span>: Principale
                 application destinée aux clients{" "}
                 <TechBadge icon tech="rubyonrails" />
                 <TechBadge icon tech="react" />
                 <TechBadge icon tech="sass" />
-              </span>{" "}
+              </span>
               <Badge className="font-[inconsolata] font-bold text-green-100 bg-green-900">
                 <Crosshair size="16" /> Coeur de mes activités
               </Badge>
@@ -309,7 +312,7 @@ function App() {
           </ul>
         </Card>
         <Card className="p-2 gap-2 border-0 bg-neutral-900 shadow-lg shadow-neutral-900">
-          <div className="flex justify-between items-start">
+          <div className="flex flex-col sm:flex-row justify-between items-start gap-2">
             <div>
               <div className="flex items-center gap-2">
                 <img
@@ -322,10 +325,12 @@ function App() {
                 <MapPin size="16" /> Aix-en-Provence, France
               </p>
             </div>
-            <Badge className="font-[inconsolata] bg-stone-700">
-              Stage fin d'études
-            </Badge>
-            <Badge>Janvier 2021 → Aout 2021</Badge>
+            <div className="flex flex-col sm:flex-row gap-2">
+              <Badge className="font-[inconsolata] bg-stone-700">
+                Stage fin d'études
+              </Badge>
+              <Badge>Janvier 2021 → Aout 2021</Badge>
+            </div>
           </div>
           <p>
             J'ai été chargé de former une grande partie du personnel, chefs de
@@ -343,7 +348,7 @@ function App() {
           <Badge className="font-[inconsolata] bg-neutral-800">
             Autres expériences notables
           </Badge>
-          <div className="flex items-baseline gap-2">
+          <div className="flex flex-col sm:flex-row items-baseline gap-2">
             <h3 className="font-bold">L'arbre à hélices</h3>
             <span className="text-neutral-400 flex items-center">
               Stage développeur - Première expérience{" "}
@@ -352,7 +357,7 @@ function App() {
             <div className="flex-grow" />
             <Badge className="self-end">Mai 2019</Badge>
           </div>
-          <div className="flex items-baseline gap-2">
+          <div className="flex flex-col sm:flex-row items-baseline gap-2">
             <h3 className="font-bold ">Festival d'avignon - IN</h3>
             <span className="text-neutral-400">
               Agent d'accueil et accompagnant PMR
@@ -360,7 +365,7 @@ function App() {
             <div className="flex-grow" />
             <Badge>Juillet 2018 & 2019</Badge>
           </div>
-          <div className="flex items-baseline gap-2">
+          <div className="flex flex-col sm:flex-row items-baseline gap-2">
             <h3 className="font-bold ">Gentlemen du déménagement</h3>
             <span className="text-neutral-400">Déménageur</span>
             <div className="flex-grow" />
