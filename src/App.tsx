@@ -244,8 +244,10 @@ function App() {
           <Card className="p-2 gap-1 border-green-600 shadow-md shadow-green-900 ">
             <div className="flex flex-col sm:flex-row justify-between items-center gap-2">
               <span className="text-lg">
-                <span className="font-bold">Cloverfield</span>: Principale
-                application destinée aux clients{" "}
+                <span className="font-bold">Cloverfield</span>{" "}
+                <span className="text-neutral-400">
+                  : principale application destinée aux clients
+                </span>{" "}
                 <TechBadge icon tech="rubyonrails" />
                 <TechBadge icon tech="react" />
                 <TechBadge icon tech="sass" />
@@ -287,7 +289,7 @@ function App() {
             </p>
           </Card>
           <span>
-            <span className="font-bold">Produit physique</span>: 2 projets
+            <span className="font-bold">Produit physique</span> : 2 projets
             embarqués
           </span>
           <ul className="list-disc list-inside ml-1">
@@ -301,7 +303,7 @@ function App() {
           </ul>
 
           <span>
-            <span className="font-bold">Plateforme monitoring</span>:
+            <span className="font-bold">Plateforme monitoring</span> :
             Application de visualisation et validation de données
           </span>
           <ul className="list-disc list-inside ml-1">
@@ -350,12 +352,12 @@ function App() {
           </Badge>
           <div className="flex flex-col sm:flex-row items-baseline gap-2">
             <h3 className="font-bold">L'arbre à hélices</h3>
-            <span className="text-neutral-400 flex items-center">
+            <span className="text-neutral-400">
               Stage développeur - Première expérience{" "}
               <TechBadge className="ml-1" tech="react" />
             </span>
             <div className="flex-grow" />
-            <Badge className="self-end">Mai 2019</Badge>
+            <Badge>Mai 2019</Badge>
           </div>
           <div className="flex flex-col sm:flex-row items-baseline gap-2">
             <h3 className="font-bold ">Festival d'avignon - IN</h3>
