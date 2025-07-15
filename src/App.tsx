@@ -8,6 +8,7 @@ import {
   Dumbbell,
   Gamepad2,
   Github,
+  Globe,
   Globe2,
   GraduationCap,
   Guitar,
@@ -120,12 +121,17 @@ function App() {
           </div>
           <a href="https://www.linkedin.com/in/enzo-gueny-3b16b9186/">
             <div className="flex items-center gap-2">
-              <Linkedin size="16" /> /enzo-gueny
+              <Linkedin size="16" /> enzo gueny
             </div>
           </a>
           <a href="https://github.com/hankiou">
             <div className="flex items-center gap-2">
               <Github size="16" /> /hankiou
+            </div>
+          </a>
+          <a href="https://hankiou.com">
+            <div className="flex items-center gap-2">
+              <Globe size="16" /> hankiou.com
             </div>
           </a>
         </Card>
