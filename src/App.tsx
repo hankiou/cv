@@ -91,7 +91,6 @@ function App() {
               <TechBadge className="bg-neutral-900" tech="postgresql" />
               <TechBadge className="bg-neutral-900" tech="rubyonrails" />
               <TechBadge className="bg-neutral-900" tech="docker" />
-              <TechBadge className="bg-neutral-900" tech="awslambda" />
             </div>
           </Card>
           <Card className="p-2 border-0 bg-neutral-700 flex gap-2 flex-col">
@@ -101,6 +100,7 @@ function App() {
               <TechBadge className="bg-neutral-900" tech="git" />
               <TechBadge className="bg-neutral-900" tech="bitbucket" />
               <TechBadge className="bg-neutral-900" tech="unity" />
+              <TechBadge className="bg-neutral-900" tech="blender" />
             </div>
           </Card>
         </div>
