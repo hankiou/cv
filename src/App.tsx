@@ -46,8 +46,7 @@ function App() {
             Développeur full stack
           </Badge>
           <Badge className="bg-neutral-600 flex items-center gap-1">
-            <p className="font-extrabold italic text-purple-300">XP</p>
-            3+ ans
+            <p className="font-extrabold italic text-purple-300">XP</p>4 ans
           </Badge>
           <img
             src={`${import.meta.env.BASE_URL}/flags/fr.svg`}
@@ -61,7 +60,7 @@ function App() {
           />
         </div>
         <h1 className="text-3xl text-center md:text-left sm:text-4xl md:text-5xl font-bold break-words">
-          Enzo GUENY MICALLEF
+          Enzo GUENY
         </h1>
         <p className="text-base sm:text-lg text-center md:text-left text-neutral-300">
           Je suis développeur full stack qualifié en React avec un profil
