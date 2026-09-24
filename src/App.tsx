@@ -238,7 +238,7 @@ function App() {
               <Badge className="font-[inconsolata] bg-stone-700">
                 <Lightbulb size="16" /> Expérience principale
               </Badge>
-              <Badge>Mai 2022 → Décembre 2025</Badge>
+              <Badge>Mai 2022 → Déc. 2025</Badge>
             </div>
           </div>
           <p>
