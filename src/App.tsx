@@ -100,6 +100,7 @@ function App() {
               <TechBadge className="bg-neutral-900" tech="bitbucket" />
               <TechBadge className="bg-neutral-900" tech="unity" />
               <TechBadge className="bg-neutral-900" tech="blender" />
+              <TechBadge className="bg-neutral-900" tech="claude" />
             </div>
           </Card>
         </div>
@@ -237,7 +238,7 @@ function App() {
               <Badge className="font-[inconsolata] bg-stone-700">
                 <Lightbulb size="16" /> Expérience principale
               </Badge>
-              <Badge>Mai 2022 → Aujourd'hui</Badge>
+              <Badge>Mai 2022 → Décembre 2025</Badge>
             </div>
           </div>
           <p>
